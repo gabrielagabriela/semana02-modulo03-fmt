@@ -19,6 +19,11 @@ public class SugestaoController {
         this.service = service;
     }
 
+    @GetMapping
+    public ResponseEntity<List<Sugestao>> buscarTodos(){
+        return ResponseEntity.status(HttpStatus.OK).body(service.buscarTodos());
+    }
+
 
     @PostMapping
     public ResponseEntity<Sugestao> criar(@RequestBody Sugestao sugestao){
