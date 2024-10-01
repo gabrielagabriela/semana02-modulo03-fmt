@@ -24,6 +24,10 @@ public class SugestaoController {
         return ResponseEntity.status(HttpStatus.OK).body(service.buscarTodos());
     }
 
+    @GetMapping("{id}")
+    public ResponseEntity<Sugestao> buscarPorId(@PathVariable Long id){
+        return ResponseEntity.status(HttpStatus.OK).body(service.buscarPorId(id));
+    }
 
     @PostMapping
     public ResponseEntity<Sugestao> criar(@RequestBody Sugestao sugestao){
